@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naturalist Archives | Oxidized Structural Vellum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'archive-bg': '#0f110e',
+            'archive-vellum': '#e8e3d7', // Approx from rgba(232, 227, 215, 0.85)
+            'archive-copper': '#4d6356',
+            'archive-rust': '#a64d2e',
+            'archive-black': '#1a1c1a',
+            'archive-ink': '#2b2b2b',
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom utility for the grain overlay */
+    .grain-overlay {
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.15;
+      background: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');
+    }
+    
+    .grid-background {
+      background-image: 
+        linear-gradient(rgba(77, 99, 86, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(77, 99, 86, 0.2) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f110e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #a64d2e;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+<body class="bg-archive-bg text-archive-vellum font-sans selection:bg-archive-rust selection:text-white">
+  <div id="root"></div>
+  <div class="fixed inset-0 grain-overlay pointer-events-none"></div>
+</body>
+</html>

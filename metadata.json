@@ -1,0 +1,8 @@
+{
+  "name": "Postcards Home",
+  "description": "A private family postcard system with iOS widget integration.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
